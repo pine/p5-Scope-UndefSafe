@@ -10,6 +10,17 @@ perl:
   - "5.20"
   - "5.22"
 
+before_install:
+  - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+
+script:
+  - perl Build.PL && ./Build build
+  - prove -r xt
+  - cover -test
+
+after_success:
+  - cover -report codecov
+
 slack:
   notifications:
     - secure: "Nr+g5cJIEsWGG/HlEuQLtd3P3JJ8ISSL0lGxsU73vw/goVO0N84g5rhPE8s9CqiBJP2tznpqntXIYgo5VZYyLoTsApaIsTLeCgEiF2Klh3DqPGQ6BAp6DlRJCNqQOWC+xDUHpiYLAT8K83PFZgFb+VTb5ZQ1c0mMRTyEXPYDK2OCL9h1ls0vpWaP++WusaMOFG8lzen2YOoHA5GDfYuvAWVIwNDS7Kh3zT3IO+BCDM0H3+hEnNt3QARDYE3tOGipR/4ppwuJP5vFs4FHlZ3Zg0/5eecbZf689O6TnB2NWJv+GaODelJ7gajt6nMGQFxFRzE/Z/Oorqk+oef4/WCVIZ8/dsDGaJ3MG4qc5WQ1D+iCUeUIvrXrM88jGvMLoN7GxaNQq4NzwEfMRvoi62zIZZwJEgwfqjtyxXHygt2aN3WubwhrTI5M/NLOZfHM9Z9Asku58Yl0kCoLEnHec7IcpYI6/Qi7rXbRAl047AGCityhc8W/FjAlzm17XS0KiWI9qG3EY5qzx612ZOlIEmslGzDThUHysiID2NjFbNcvWj92+RHRbuBQLOdhJBxxlSeecuccOwzRMsT20b4h6b1IJcr7C9rQbyVEO5zVDbM2l68OFjZ2gCIWYtWwLQ6RBHj9llwkZBVgG4crSe54aPQvCPo3pTbEdtb5CUiAzy8+nas="
