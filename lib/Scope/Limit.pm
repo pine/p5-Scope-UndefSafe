@@ -1,0 +1,102 @@
+package Scope::Limit;
+use strict;
+use warnings;
+use utf8;
+
+our $VERSION = "0.01";
+
+use Exporter qw/import/;
+our @EXPORT_OK = qw/let apply/;
+
+sub let (&$; &) {
+    my ($func, $value) = @_;
+
+    if (defined $value) {
+        local $_ = $value;
+        return $func->();
+    }
+}
+
+sub apply (&$; &) {
+    my ($func, $value) = @_;
+    let(\&$func, $value);
+    return $value;
+}
+
+1;
+__END__
+
+=encoding utf-8
+
+=head1 NAME
+
+Scope::Limit - The functions to limit the scope.
+
+=head1 SYNOPSIS
+
+    use Scope::Limit qw/let apply/;
+
+    # Syntactic sugar for let:
+    #     $obj ? $obj->method() : undef
+
+    my $obj = AnyObject->new;
+    let { $_->method() } $obj; # `method` is executed.
+
+    $obj = undef;
+    let { $_->method() } $obj; # `method` is not executed.
+
+
+    # Syntactic sugar for apply:
+    #     $obj ? do { $obj->method(); $obj } : undef
+
+    my $obj = AnyObject->new;
+    apply { $_->method() } $obj; # `method` is executed, and return $obj.
+
+    $obj = undef;
+    apply { $_->method() } $obj; # `method` is not executed.
+
+
+=head1 DESCRIPTION
+
+Scope::Limit has two functions to limit scope undef safety.
+
+=head1 SEE ALSO
+
+=over
+
+=item * L<stdlib.kotlin.let|https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/let.html>
+
+=item * L<stdlib.kotlin.apply|https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/apply.html>
+
+=back
+
+=head1 LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2016 Pine Mizune
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+=head1 AUTHOR
+
+Pine Mizune E<lt>pinemz@gmail.comE<gt>
+
+=cut
+

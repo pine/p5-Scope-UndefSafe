@@ -1,0 +1,7 @@
+name = "Scope-Limit"
+badges = ["travis"]
+authority="cpan:PINE"
+license="mit"
+
+module_maker="ModuleBuildTiny"
+
