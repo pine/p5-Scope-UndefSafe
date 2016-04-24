@@ -49,6 +49,17 @@ Scope::UndefSafe - The functions to limit the scope.
 
 Scope::UndefSafe has two functions to limit scope undef safety.
 
+=head2 METHODS
+
+=head3 C<let>
+
+Invoke block if pass non undef value as second argument.
+And return block returned value.
+
+=head3 C<apply>
+
+Invoke block if pass non undef value as a second argument.
+And return a second argument.
 
 =head1 SEE ALSO
 

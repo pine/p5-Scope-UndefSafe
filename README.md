@@ -19,6 +19,18 @@ Scope::UndefSafe - The functions to limit the scope.
 
 Scope::UndefSafe has two functions to limit scope undef safety.
 
+## METHODS
+
+### `let`
+
+Invoke block if pass non undef value as second argument.
+And return block returned value.
+
+### `apply`
+
+Invoke block if pass non undef value as a second argument.
+And return a second argument.
+
 # SEE ALSO
 
 - [stdlib.kotlin.let](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/let.html)
