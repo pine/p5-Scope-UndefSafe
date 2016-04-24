@@ -56,10 +56,20 @@ Scope::UndefSafe has two functions to limit scope undef safety.
 Invoke block if pass non undef value as second argument.
 And return block returned value.
 
+The following two are the same behavior.
+
+    let { $_->method() } $obj;
+    $obj ? $obj->method() : undef;
+
 =head3 C<apply>
 
 Invoke block if pass non undef value as a second argument.
 And return a second argument.
+
+The following two are the same behavior.
+
+    apply { $_->method() } $obj;
+    $obj ? do { $obj->method(); $obj } : undef;
 
 =head1 SEE ALSO
 
