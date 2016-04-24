@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pine613/p5-Scope-UndefSafe.svg?branch=master)](https://travis-ci.org/pine613/p5-Scope-UndefSafe)
+[![Build Status](https://travis-ci.org/pine613/p5-Scope-UndefSafe.svg?branch=master)](https://travis-ci.org/pine613/p5-Scope-UndefSafe) [![Build Status](https://img.shields.io/appveyor/ci/pine613/p5-Scope-UndefSafe/master.svg)](https://ci.appveyor.com/project/pine613/p5-Scope-UndefSafe/branch/master) [![Coverage Status](http://codecov.io/github/pine613/p5-Scope-UndefSafe/coverage.svg?branch=master)](https://codecov.io/github/pine613/p5-Scope-UndefSafe?branch=master)
 # NAME
 
 Scope::UndefSafe - The functions to limit the scope.
