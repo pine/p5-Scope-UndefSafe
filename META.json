@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Scope-Limit",
+   "name" : "Scope-UndefSafe",
    "no_index" : {
       "directory" : [
          "t",
@@ -60,13 +60,13 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/pine613/p5-Scope-Limit/issues"
+         "web" : "https://github.com/pine613/p5-Scope-UndefSafe/issues"
       },
-      "homepage" : "https://github.com/pine613/p5-Scope-Limit",
+      "homepage" : "https://github.com/pine613/p5-Scope-UndefSafe",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/pine613/p5-Scope-Limit.git",
-         "web" : "https://github.com/pine613/p5-Scope-Limit"
+         "url" : "git://github.com/pine613/p5-Scope-UndefSafe.git",
+         "web" : "https://github.com/pine613/p5-Scope-UndefSafe"
       }
    },
    "version" : "0.01",

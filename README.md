@@ -1,11 +1,11 @@
-[![Build Status](https://travis-ci.org/pine613/p5-Scope-Limit.svg?branch=master)](https://travis-ci.org/pine613/p5-Scope-Limit)
+[![Build Status](https://travis-ci.org/pine613/p5-Scope-UndefSafe.svg?branch=master)](https://travis-ci.org/pine613/p5-Scope-UndefSafe)
 # NAME
 
-Scope::Limit - The functions to limit the scope.
+Scope::UndefSafe - The functions to limit the scope.
 
 # SYNOPSIS
 
-    use Scope::Limit qw/let apply/;
+    use Scope::UndefSafe qw/let apply/;
 
     my $obj = AnyObject->new;
     let { $_->method() } $obj; # `method` is executed.
@@ -17,7 +17,7 @@ Scope::Limit - The functions to limit the scope.
 
 # DESCRIPTION
 
-Scope::Limit has two functions to limit scope undef safety.
+Scope::UndefSafe has two functions to limit scope undef safety.
 
 # SEE ALSO
 

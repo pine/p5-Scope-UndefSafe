@@ -1,4 +1,4 @@
-name = "Scope-Limit"
+name = "Scope-UndefSafe"
 badges = ["travis"]
 authority="cpan:PINE"
 license="mit"
