@@ -5,7 +5,7 @@ use utf8;
 use t::Util;
 
 use_ok $_ for qw(
-    Scope::Limit
+    Scope::UndefSafe
 );
 
 done_testing;

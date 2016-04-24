@@ -3,7 +3,7 @@ use warnings FATAL => 'all';
 use utf8;
 
 use t::Util;
-use Scope::Limit qw/apply/;
+use Scope::UndefSafe qw/apply/;
 
 sub apply_ok {
     my $value = shift;

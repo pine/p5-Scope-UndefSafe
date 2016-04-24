@@ -1,4 +1,4 @@
-package Scope::Limit;
+package Scope::UndefSafe;
 use strict;
 use warnings;
 use utf8;
@@ -30,11 +30,11 @@ __END__
 
 =head1 NAME
 
-Scope::Limit - The functions to limit the scope.
+Scope::UndefSafe - The functions to limit the scope.
 
 =head1 SYNOPSIS
 
-    use Scope::Limit qw/let apply/;
+    use Scope::UndefSafe qw/let apply/;
 
     my $obj = AnyObject->new;
     let { $_->method() } $obj; # `method` is executed.
@@ -47,7 +47,7 @@ Scope::Limit - The functions to limit the scope.
 
 =head1 DESCRIPTION
 
-Scope::Limit has two functions to limit scope undef safety.
+Scope::UndefSafe has two functions to limit scope undef safety.
 
 
 =head1 SEE ALSO

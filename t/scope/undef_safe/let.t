@@ -5,7 +5,7 @@ use utf8;
 use Test::MockObject;
 
 use t::Util;
-use Scope::Limit qw/let/;
+use Scope::UndefSafe qw/let/;
 
 sub let_ok {
     my $value = shift;
