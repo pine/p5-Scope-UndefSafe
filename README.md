@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/pine613/p5-Scope-Limit.svg?branch=master)](https://travis-ci.org/pine613/p5-Scope-Limit)
 # NAME
 
 Scope::Limit - The functions to limit the scope.
@@ -7,24 +7,13 @@ Scope::Limit - The functions to limit the scope.
 
     use Scope::Limit qw/let apply/;
 
-    # Syntactic sugar for let:
-    #     $obj ? $obj->method() : undef
-
     my $obj = AnyObject->new;
     let { $_->method() } $obj; # `method` is executed.
-
-    $obj = undef;
-    let { $_->method() } $obj; # `method` is not executed.
-
-
-    # Syntactic sugar for apply:
-    #     $obj ? do { $obj->method(); $obj } : undef
-
-    my $obj = AnyObject->new;
     apply { $_->method() } $obj; # `method` is executed, and return $obj.
 
     $obj = undef;
-    apply { $_->method() } $obj; # `method` is not executed.
+    let { $_->method() } $obj; # `method` is not executed.
+    apply { $_->method() } $obj; # `method` is not executedm, but return $obj.
 
 # DESCRIPTION
 

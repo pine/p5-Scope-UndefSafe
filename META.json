@@ -58,7 +58,21 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/pine613/p5-Scope-Limit/issues"
+      },
+      "homepage" : "https://github.com/pine613/p5-Scope-Limit",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/pine613/p5-Scope-Limit.git",
+         "web" : "https://github.com/pine613/p5-Scope-Limit"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:PINE",
+   "x_contributors" : [
+      "Pine Mizune <pinemz@gmail.com>"
+   ],
    "x_serialization_backend" : "JSON::PP version 2.27400"
 }

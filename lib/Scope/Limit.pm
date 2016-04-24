@@ -36,29 +36,19 @@ Scope::Limit - The functions to limit the scope.
 
     use Scope::Limit qw/let apply/;
 
-    # Syntactic sugar for let:
-    #     $obj ? $obj->method() : undef
-
     my $obj = AnyObject->new;
     let { $_->method() } $obj; # `method` is executed.
-
-    $obj = undef;
-    let { $_->method() } $obj; # `method` is not executed.
-
-
-    # Syntactic sugar for apply:
-    #     $obj ? do { $obj->method(); $obj } : undef
-
-    my $obj = AnyObject->new;
     apply { $_->method() } $obj; # `method` is executed, and return $obj.
 
     $obj = undef;
-    apply { $_->method() } $obj; # `method` is not executed.
+    let { $_->method() } $obj; # `method` is not executed.
+    apply { $_->method() } $obj; # `method` is not executedm, but return $obj.
 
 
 =head1 DESCRIPTION
 
 Scope::Limit has two functions to limit scope undef safety.
+
 
 =head1 SEE ALSO
 
