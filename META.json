@@ -60,13 +60,13 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/pine613/p5-Scope-UndefSafe/issues"
+         "web" : "https://github.com/pine/p5-Scope-UndefSafe/issues"
       },
-      "homepage" : "https://github.com/pine613/p5-Scope-UndefSafe",
+      "homepage" : "https://github.com/pine/p5-Scope-UndefSafe",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/pine613/p5-Scope-UndefSafe.git",
-         "web" : "https://github.com/pine613/p5-Scope-UndefSafe"
+         "url" : "git://github.com/pine/p5-Scope-UndefSafe.git",
+         "web" : "https://github.com/pine/p5-Scope-UndefSafe"
       }
    },
    "version" : "0.01",
