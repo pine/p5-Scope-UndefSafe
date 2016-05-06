@@ -2,6 +2,9 @@ Revision history for Perl extension Scope-Limit
 
 {{$NEXT}}
 
+0.02 2016-05-06T00:17:44Z
+    - update repository urls and badge urls
+
 0.01 2016-04-25T14:08:20Z
 
     - original version
