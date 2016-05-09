@@ -12,7 +12,8 @@ perl:
 
 install:
   - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
-  - cpanm --quiet --installdeps --notest --with-develop .
+  - cpanm --quiet --notest --skip-satisfied Perl::Critic@1.125 Test::Perl::Critic@1.03
+  - cpanm --quiet --installdeps --notest .
 
 script:
   - perl Build.PL && ./Build build
