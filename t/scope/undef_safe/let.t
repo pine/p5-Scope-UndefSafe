@@ -24,8 +24,10 @@ sub let_ok {
 
 subtest undef => sub {
     my $called = 0;
-    let { $called++ } undef;
+    my $actual = let { $called++ } undef;
+
     is $called, 0;
+    is $actual, undef;
 };
 
 subtest scalar => sub {

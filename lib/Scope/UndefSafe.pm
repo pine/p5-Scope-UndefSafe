@@ -15,6 +15,8 @@ sub let (&$; &) {
         local $_ = $value;
         return $func->();
     }
+
+    return undef;
 }
 
 sub apply (&$; &) {
