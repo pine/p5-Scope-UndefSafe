@@ -5,9 +5,16 @@ perl:
   - "5.16"
   - "5.20"
   - "5.24"
+  - "5.26"
 
 install:
-  - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+  - |
+    if [ "$PERLBREW_PERL" = 5.8 ]; then
+      # Devel::Cover no longer supported perl 5.8.x.
+      cpanm --quiet --notest --skip-satisfied Devel::Cover@1.23 Devel::Cover::Report::Codecov
+    else
+      cpanm --quiet --notest --skip-satisfied Devel::Cover Devel::Cover::Report::Codecov
+    fi
   - cpanm --quiet --notest --skip-satisfied Perl::Critic@1.125 Test::Perl::Critic@1.03
   - cpanm --quiet --installdeps --notest .
 
