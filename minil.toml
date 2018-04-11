@@ -1,5 +1,6 @@
 name = "Scope-UndefSafe"
 badges = ["travis", "appveyor", "codecov"]
+authors = ["Pine Mizune"]
 authority="cpan:PINE"
 license="mit"
 

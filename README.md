@@ -50,7 +50,7 @@ The following two are the same behavior.
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Pine Mizune
+Copyright (c) 2016-2018 Pine Mizune
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
